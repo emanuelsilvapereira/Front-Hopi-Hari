@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Hopi Hari</title>
+    <link rel="stylesheet" href="/CSS/Infantasia.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="imagem/logo.png" alt="Logo Hopi Hari">
+                </div>
+                <div class="user-menu">
+                    <div class="user-info">
+                        <div class="user-name" id="user-name">Bem-vindo(a)</div>
+                        <div class="user-email" id="user-email"></div>
+                    </div>
+                    <form action="dashboard.html">
+                        <button class="logout-btn" id="logout-btn">Voltar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <h2 class="section-title">Infantasia</h2>
+        <div class="dashboard-cards">
+            
+            <!-- Card 1 -->
+            <div class="card">
+                <div class="card-image">
+                    <img src="imagem/carrossel.jpg" alt="Carrossel Giranda Pokoto">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">Giranda Pokoto</h3>
+                    <p class="card-text">Carrossel tradicional com cavalinhos coloridos.</p>
+                    <div class="ride-info">
+                        <h3 class="ride-name">Giranda Pokoto</h3>
+                        <div class="ride-time">35 min</div>
+                        <span class="ride-status status-busy">Muito Movimentado</span>
+                    </div>
+                    <a href="#" class="card-button" aria-label="Saiba mais sobre Giranda Pokoto">Saiba Mais</a>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="card">
+                <div class="card-image">
+                    <img src="imagem/girandamundi.jpg_large" alt="Roda-Gigante Giranda Mundi">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">Giranda Mundi</h3>
+                    <p class="card-text">Roda-gigante infantil com vista panorâmica adaptada.</p>
+                    <div class="ride-info">
+                        <h3 class="ride-name">Giranda Mundi</h3>
+                        <div class="ride-time">15 min</div>
+                        <span class="ride-status status-open">Normal</span>
+                    </div>
+                    <a href="#" class="card-button" aria-label="Saiba mais sobre Giranda Mundi">Saiba Mais</a>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="card">
+                <div class="card-image">
+                    <img src="imagem/kastel di lendas.jpg" alt="Kastel di Lendas">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">Kastel di Lendas</h3>
+                    <p class="card-text">Passeio em barco por cenários animados com lendas brasileiras.</p>
+                    <div class="ride-info">
+                        <h3 class="ride-name">Kastel di Lendas</h3>
+                        <div class="ride-time">35 min</div>
+                        <span class="ride-status status-maintenance">Manutenção</span>
+                    </div>
+                    <a href="#" class="card-button" aria-label="Saiba mais sobre Kastel di Lendas">Saiba Mais</a>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="card">
+                <div class="card-image">
+                    <img src="imagem/roda gigante.jpg" alt="Mini Roda-Gigante Mini Paliê">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">Mini Paliê</h3>
+                    <p class="card-text">Mini roda-gigante para crianças pequenas.</p>
+                    <div class="ride-info">
+                        <h3 class="ride-name">Mini Paliê</h3>
+                        <div class="ride-time">25 min</div>
+                        <span class="ride-status status-open">Normal</span>
+                    </div>
+                    <a href="#" class="card-button" aria-label="Saiba mais sobre Mini Paliê">Saiba Mais</a>
+                </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="card">
+                <div class="card-image">
+                    <img src="imagem/trakitanas.jpg" alt="Circuito Trakitanas">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">Trakitanas</h3>
+                    <p class="card-text">Pequeno circuito com carrinhos e obstáculos lúdicos.</p>
+                    <div class="ride-info">
+                        <h3 class="ride-name">Trakitanas</h3>
+                        <div class="ride-time">25 min</div>
+                        <span class="ride-status status-open">Normal</span>
+                    </div>
+                    <a href="#" class="card-button" aria-label="Saiba mais sobre Trakitanas">Saiba Mais</a>
+                </div>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="card">
+                <div class="card-image">
+                    <img src="imagem/chapei di pompeia.jpg" alt="Balanço Chapei di Pompéia">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">Chapei di Pompéia</h3>
+                    <p class="card-text">Balanço giratório suave para os pequenos.</p>
+                    <div class="ride-info">
+                        <h3 class="ride-name">Chapei di Pompéia</h3>
+                        <div class="ride-time">25 min</div>
+                        <span class="ride-status status-open">Normal</span>
+                    </div>
+                    <a href="#" class="card-button" aria-label="Saiba mais sobre Chapei di Pompéia">Saiba Mais</a>
+                </div>
+            </div>
+
+        </div> <!-- Fim das cards -->
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const userData = JSON.parse(localStorage.getItem('user')) || {};
+
+            if (userData.firstName) {
+                document.getElementById('user-name').textContent = `Olá, ${userData.firstName}!`;
+                document.getElementById('user-email').textContent = userData.email;
+            } else {
+                window.location.href = '/';
+            }
+
+            // Botão de logout
+            document.getElementById('logout-btn').addEventListener('click', function() {
+                localStorage.removeItem('user');
+                window.location.href = '/';
+            });
+
+            // Toggle menu lateral
+            const toggle = document.getElementById('menu-toggle');
+            if (toggle) {
+                toggle.addEventListener('click', function () {
+                    document.getElementById('sidebar').classList.toggle('active');
+                });
+            }
+
+            // Fechar menu ao clicar
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function () {
+                    if (window.innerWidth <= 992) {
+                        document.getElementById('sidebar').classList.remove('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

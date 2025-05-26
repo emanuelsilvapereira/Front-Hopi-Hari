@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Hopi Hari</title>
+    <link rel="stylesheet" href="/CSS/Aribabiba.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="/imagem/logo.png" alt="Logo Hopi Hari">
+                </div>
+                <div class="user-menu">
+                    <div class="user-info">
+                        <div class="user-name" id="user-name">Bem-vindo(a)</div>
+                        <div class="user-email" id="user-email"></div>
+                    </div>
+                    <form action="dashboard.html">
+                        <button class="logout-btn">Voltar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <h2 class="section-title">Aribabiba</h2>
+        <div class="dashboard-cards">
+            
+            <div class="card">
+                <div class="card-image">
+                    <img src="/imagem/katapul" alt="katapul">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">katapul</h3>
+                    <p class="card-text">Montanha-russa com lançamento (looping de ida e volta).</p>
+                    <div class="ride-info">
+                        <h3 class="ride-name">katapul</h3>
+                        <div class="ride-time">35 min</div>
+                        <span class="ride-status status-busy">Muito Movimentado</span>
+                    </div>
+                    <a href="#" class="card-button">Saiba Mais</a>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-image">
+                    <img src="/imagem/Vurang-2-1.png" alt="Mini Tower">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">Mini Tower</h3>
+                    <p class="card-text">Torre de queda para crianças.</p>
+                    <div class="ride-info">
+                        <h3 class="ride-name">Mini Tower</h3>
+                        <div class="ride-time">15 min</div>
+                        <span class="ride-status status-open">Normal</span>
+                    </div>
+                    <a href="#" class="card-button">Saiba Mais</a>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-image">
+                    <img src="/imagem/Katakumb.png" alt="Katakumb">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">Katakumb</h3>
+                    <p class="card-text">Atração indoor com cenários egípcios e sustos — tipo dark ride de terror.</p>
+                    <div class="ride-info">
+                        <h3 class="ride-name">Katakumb</h3>
+                        <div class="ride-time">35 min</div>
+                        <span class="ride-status status-maintenance">Manutenção</span>
+                    </div>
+                    <a href="#" class="card-button">Saiba Mais</a>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-image">
+                    <img src="/imagem/simulakron.jpg" alt="Simulákron">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">Simulákron</h3>
+                    <p class="card-text">Simulador de movimento com projeção 3D/4D.</p>
+                    <div class="ride-info">
+                        <h3 class="ride-name">Simulákron</h3>
+                        <div class="ride-time">25 min</div>
+                        <span class="ride-status status-open">Normal</span>
+                    </div>
+                    <a href="#" class="card-button">Saiba Mais</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image">
+                    <img src="/imagem/SPEED 64.jpg" alt="SPEED '64">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">SPEED '64</h3>
+                    <p class="card-text">montanha-russa inspirada em Nova Iorque dos anos 80</p>
+                    <div class="ride-info">
+                        <h3 class="ride-name">SPEED '64</h3>
+                        <div class="ride-time">15 min</div>
+                        <span class="ride-status status-open">Normal</span>
+                    </div>
+                    <a href="#" class="card-button">Saiba Mais</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image">
+                    <img src="/imagem/Vambate.jpg" alt="Vambatê">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">Vambatê</h3>
+                    <p class="card-text">montanha-russa inspirada em Nova Iorque dos anos 80</p>
+                    <div class="ride-info">
+                        <h3 class="ride-name">SPEED '64</h3>
+                        <div class="ride-time">15 min</div>
+                        <span class="ride-status status-open">Normal</span>
+                    </div>
+                    <a href="#" class="card-button">Saiba Mais</a>
+                </div>
+            </div>
+
+            
+
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const userData = JSON.parse(localStorage.getItem('user')) || {};
+
+            if (userData.firstName) {
+                document.getElementById('user-name').textContent = `Olá, ${userData.firstName}!`;
+                document.getElementById('user-email').textContent = userData.email;
+            } else {
+                window.location.href = '/';
+            }
+
+            const logoutBtn = document.getElementById('logout-btn');
+            if (logoutBtn) {
+                logoutBtn.addEventListener('click', function () {
+                    localStorage.removeItem('user');
+                    window.location.href = '/';
+                });
+            }
+
+            const menuToggle = document.getElementById('menu-toggle');
+            if (menuToggle) {
+                menuToggle.addEventListener('click', function () {
+                    document.getElementById('sidebar').classList.toggle('active');
+                });
+            }
+
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function () {
+                    if (window.innerWidth <= 992) {
+                        document.getElementById('sidebar').classList.remove('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
