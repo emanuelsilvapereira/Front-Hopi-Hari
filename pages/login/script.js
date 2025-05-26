@@ -19,11 +19,12 @@ document.getElementById('loginForm').addEventListener('submit', async function(e
         
         if (response.ok) {
             // Salvar dados do usuário no localStorage (para demonstração)
-            localStorage.setItem('token', JSON.stringify(data.Resultado.token));
+            localStorage.setItem('token', JSON.stringify(data.token));
+            localStorage.setItem('user', JSON.stringify(data.user));
             
             // Redirecionar para a página principal (após login bem-sucedido)
             alert('Login realizado com sucesso!');
-            window.location.href = 'pages/dashboard/dashboard.html';  // Página após login
+            window.location.href = '../dashboard/dashboard.html';  // Página após login
         } else {
             alert(`Erro: ${data.message || 'Credenciais inválidas'}`);
         }
